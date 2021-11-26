@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SubredditBlocker</title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0 10px 10px 10px;
+            font: 16px/1.2em "Open Sans", Arial, Tahoma, Verdana, Serif;
+            align-items: center;
+        }
+
+        body:not(.ready) #textarea::placeholder,
+        body:not(.ready) #controls {
+            opacity: 0;
+        }
+
+        body:not(.ready) #controls {
+            visibility: hidden;
+        }
+
+        #textarea {
+            border: 3px solid;
+            outline: none;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        #textarea::placeholder {
+            color: silver;
+            opacity: 1;
+            transition: opacity .7s;
+        }
+
+        #controls {
+            margin-top: 10px;
+            transition: opacity 1s;
+        }
+
+        a {
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #save {
+            font-size: 120%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        #enabled {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SubredditBlocker</h1>
+    <p>
+        <strong>SubredditBlocker</strong> blocks access to subreddits specified in the window below. Type the subreddits
+        you would like blocked by name (e.g. <strong>AskReddit</strong>) in a new line each.
+    </p>
+
+    <textarea id="textarea" rows="10" cols="30" spellcheck="false"></textarea>
+    <br>
+
+    <div id="controls">
+        <button id="save">Save</button>
+        <span id="enabled">
+            <strong>Enabled?</strong><input id="checkbox" type="checkbox" checked="checked">
+        </span>
+    </div>
+
+    <br />
+
+    <a href="https://github.com/callistachang/SubredditBlocker" target="_blank">SubredditBlocker</a> by
+    <strong>callistachang</strong>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
